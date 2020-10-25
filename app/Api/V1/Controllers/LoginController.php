@@ -12,6 +12,11 @@ use Auth;
 
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        return auth()->shouldUse('api');
+    }
+    
     /**
      * Log the user in
      *
@@ -24,7 +29,7 @@ class LoginController extends Controller
         $credentials = $request->only(['email', 'password']);
 
         try {
-            $token = Auth::guard()->attempt($credentials);
+            $token = Auth::guard('api')->attempt($credentials);
 
             if(!$token) {
                 throw new AccessDeniedHttpException();

@@ -1,0 +1,8 @@
+body.login .logo {
+    max-width: 150px;
+    padding-top: 40px;
+}
+.app-container .content-container .side-menu .navbar-header .navbar-brand img {
+    max-width: 100%;
+    max-height: 70%;
+}
