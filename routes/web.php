@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'], function () {
+Route::get('/test', function () {
+    return "ist a route test.";
+});
+
+Route::group(['prefix' => 'panel'], function () {
     Voyager::routes();
 });
